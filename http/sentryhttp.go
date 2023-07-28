@@ -99,17 +99,21 @@ func (h *Handler) handle(handler http.Handler) http.HandlerFunc {
 			sentry.ContinueFromRequest(r),
 			sentry.WithTransactionSource(sentry.SourceURL),
 		}
-		// We don't mind getting an existing transaction back so we don't need to
-		// check if it is.
-		transaction := sentry.StartTransaction(ctx,
-			fmt.Sprintf("%s %s", r.Method, r.URL.Path),
-			options...,
-		)
-		defer transaction.Finish()
+		// If a transaction was already started, whoever started is is responsible for finishing it.
+		transaction := sentry.TransactionFromContext(ctx)
+		if transaction == nil {
+			transaction = sentry.StartTransaction(ctx,
+				fmt.Sprintf("%s %s", r.Method, r.URL.Path),
+				options...,
+			)
+			defer transaction.Finish()
+			// We also avoid clobbering the request's context with an older version. If values were added after the
+			// original transaction's creation, they would be lost by indiscriminately overwriting the context.
+			r = r.WithContext(transaction.Context())
+		}
 		// TODO(tracing): if the next handler.ServeHTTP panics, store
 		// information on the transaction accordingly (status, tag,
 		// level?, ...).
-		r = r.WithContext(transaction.Context())
 		hub.Scope().SetRequest(r)
 		defer h.recoverWithSentry(hub, r)
 		// TODO(tracing): use custom response writer to intercept

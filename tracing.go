@@ -114,7 +114,7 @@ func StartSpan(ctx context.Context, operation string, options ...SpanOption) *Sp
 		StartTime: time.Now(),
 		Sampled:   SampledUndefined,
 
-		ctx:           context.WithValue(ctx, spanContextKey{}, &span),
+		ctx:           SpanToContext(ctx, &span),
 		parent:        parent,
 		isTransaction: !hasParent,
 	}
@@ -959,6 +959,12 @@ func SpanFromContext(ctx context.Context) *Span {
 		return span
 	}
 	return nil
+}
+
+// SpanToContext stores a span in the provided context.
+// Usually this function does not need to be called directly; use [StartSpan] instead.
+func SpanToContext(ctx context.Context, span *Span) context.Context {
+	return context.WithValue(ctx, spanContextKey{}, span)
 }
 
 // StartTransaction will create a transaction (root span) if there's no existing
