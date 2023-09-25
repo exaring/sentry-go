@@ -26,7 +26,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/getsentry/sentry-go/internal/otel/baggage/internal/baggage"
+	"github.com/exaring/sentry-go/internal/otel/baggage/internal/baggage"
 )
 
 var rng *rand.Rand

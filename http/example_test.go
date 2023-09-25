@@ -4,12 +4,12 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/getsentry/sentry-go"
-	sentryhttp "github.com/getsentry/sentry-go/http"
+	"github.com/exaring/sentry-go"
+	sentryhttp "github.com/exaring/sentry-go/http"
 )
 
 // For a longer and executable example, see
-// https://github.com/getsentry/sentry-go/tree/master/_examples/http.
+// https://github.com/exaring/sentry-go/tree/master/_examples/http.
 func Example() {
 	// Initialize the Sentry SDK once in the main function.
 	// sentry.Init(...)

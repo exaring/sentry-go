@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/getsentry/sentry-go"
+	"github.com/exaring/sentry-go"
 )
 
 func runTask(monitorSlug string, duration time.Duration, shouldFail bool) {

@@ -43,7 +43,7 @@ func collectTransactionProfile(span *Span) *profileInfo {
 	info := &profileInfo{
 		Version: "1",
 		EventID: uuid(),
-		// See https://github.com/getsentry/sentry-go/pull/626#discussion_r1204870340 for explanation why we use the Transaction time.
+		// See https://github.com/exaring/sentry-go/pull/626#discussion_r1204870340 for explanation why we use the Transaction time.
 		Timestamp: span.StartTime,
 		Trace:     result.trace,
 		Transaction: profileTransaction{

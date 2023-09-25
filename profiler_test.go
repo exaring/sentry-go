@@ -12,7 +12,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/getsentry/sentry-go/internal/testutils"
+	"github.com/exaring/sentry-go/internal/testutils"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -159,7 +159,7 @@ func TestProfilerStackTrace(t *testing.T) {
 	// Note: we can't check the exact stack trace because the profiler runs its own goroutine
 	// And this test goroutine may be interrupted at multiple points.
 	require.True(strings.HasSuffix(actual, `
-github.com/getsentry/sentry-go TestProfilerStackTrace
+github.com/exaring/sentry-go TestProfilerStackTrace
 testing tRunner
 testing (*T).Run`))
 }
@@ -494,7 +494,7 @@ func TestProfilerTimeSleep(t *testing.T) {
 //
 // goos: windows
 // goarch: amd64
-// pkg: github.com/getsentry/sentry-go
+// pkg: github.com/exaring/sentry-go
 // cpu: 12th Gen Intel(R) Core(TM) i7-12700K
 // BenchmarkProfilerStartStop/Wait-20                 12507             94991 ns/op          130506 B/op       3166 allocs/op
 // BenchmarkProfilerStartStop/NoWait-20                9600            112354 ns/op          131125 B/op       3166 allocs/op

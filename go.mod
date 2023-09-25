@@ -1,4 +1,4 @@
-module github.com/getsentry/sentry-go
+module github.com/exaring/sentry-go
 
 go 1.18
 

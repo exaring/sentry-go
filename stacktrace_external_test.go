@@ -11,7 +11,7 @@ import (
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
 
-	"github.com/getsentry/sentry-go"
+	"github.com/exaring/sentry-go"
 )
 
 func f1() *sentry.Stacktrace {
@@ -59,7 +59,7 @@ func TestNewStacktrace(t *testing.T) {
 			Frames: []sentry.Frame{
 				{
 					Function: "f1",
-					Module:   "github.com/getsentry/sentry-go_test",
+					Module:   "github.com/exaring/sentry-go_test",
 					Lineno:   18,
 					InApp:    true,
 				},
@@ -69,13 +69,13 @@ func TestNewStacktrace(t *testing.T) {
 			Frames: []sentry.Frame{
 				{
 					Function: "f2",
-					Module:   "github.com/getsentry/sentry-go_test",
+					Module:   "github.com/exaring/sentry-go_test",
 					Lineno:   22,
 					InApp:    true,
 				},
 				{
 					Function: "f1",
-					Module:   "github.com/getsentry/sentry-go_test",
+					Module:   "github.com/exaring/sentry-go_test",
 					Lineno:   18,
 					InApp:    true,
 				},
@@ -90,7 +90,7 @@ func TestNewStacktrace(t *testing.T) {
 			Frames: []sentry.Frame{
 				{
 					Function: "f3",
-					Module:   "github.com/getsentry/sentry-go_test",
+					Module:   "github.com/exaring/sentry-go_test",
 					Lineno:   25,
 					InApp:    true,
 				},
@@ -119,13 +119,13 @@ func TestExtractStacktrace(t *testing.T) {
 			Frames: []sentry.Frame{
 				{
 					Function: "RedPkgErrorsRanger",
-					Module:   "github.com/getsentry/sentry-go_test",
+					Module:   "github.com/exaring/sentry-go_test",
 					Lineno:   29,
 					InApp:    true,
 				},
 				{
 					Function: "BluePkgErrorsRanger",
-					Module:   "github.com/getsentry/sentry-go_test",
+					Module:   "github.com/exaring/sentry-go_test",
 					Lineno:   33,
 					InApp:    true,
 				},
@@ -136,13 +136,13 @@ func TestExtractStacktrace(t *testing.T) {
 			Frames: []sentry.Frame{
 				{
 					Function: "RedPingcapErrorsRanger",
-					Module:   "github.com/getsentry/sentry-go_test",
+					Module:   "github.com/exaring/sentry-go_test",
 					Lineno:   37,
 					InApp:    true,
 				},
 				{
 					Function: "BluePingcapErrorsRanger",
-					Module:   "github.com/getsentry/sentry-go_test",
+					Module:   "github.com/exaring/sentry-go_test",
 					Lineno:   41,
 					InApp:    true,
 				},
@@ -153,13 +153,13 @@ func TestExtractStacktrace(t *testing.T) {
 			Frames: []sentry.Frame{
 				{
 					Function: "RedGoErrorsRanger",
-					Module:   "github.com/getsentry/sentry-go_test",
+					Module:   "github.com/exaring/sentry-go_test",
 					Lineno:   45,
 					InApp:    true,
 				},
 				{
 					Function: "BlueGoErrorsRanger",
-					Module:   "github.com/getsentry/sentry-go_test",
+					Module:   "github.com/exaring/sentry-go_test",
 					Lineno:   49,
 					InApp:    true,
 				},
@@ -168,7 +168,7 @@ func TestExtractStacktrace(t *testing.T) {
 		// FIXME: The tests below are commented out to avoid introducing a
 		// dependency on golang.org/x/xerrors. We should enable them when we
 		// move tests with external dependencies to a separate module.
-		// See https://github.com/getsentry/sentry-go/issues/238.
+		// See https://github.com/exaring/sentry-go/issues/238.
 		//
 		// https://golang.org/x/xerrors
 		// "xerrors.errorString": {
@@ -184,7 +184,7 @@ func TestExtractStacktrace(t *testing.T) {
 		// 		Frames: []sentry.Frame{
 		// 			{
 		// 				Function: "TestExtractStacktrace.func1",
-		// 				Module:   "github.com/getsentry/sentry-go_test",
+		// 				Module:   "github.com/exaring/sentry-go_test",
 		// 				Lineno:   178,
 		// 				InApp:    true,
 		// 			},
@@ -204,7 +204,7 @@ func TestExtractStacktrace(t *testing.T) {
 		// 		Frames: []sentry.Frame{
 		// 			{
 		// 				Function: "TestExtractStacktrace.func2",
-		// 				Module:   "github.com/getsentry/sentry-go_test",
+		// 				Module:   "github.com/exaring/sentry-go_test",
 		// 				Lineno:   198,
 		// 				InApp:    true,
 		// 			},
@@ -224,7 +224,7 @@ func TestExtractStacktrace(t *testing.T) {
 		// 		Frames: []sentry.Frame{
 		// 			{
 		// 				Function: "TestExtractStacktrace.func3",
-		// 				Module:   "github.com/getsentry/sentry-go_test",
+		// 				Module:   "github.com/exaring/sentry-go_test",
 		// 				Lineno:   218,
 		// 				InApp:    true,
 		// 			},

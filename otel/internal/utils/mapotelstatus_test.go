@@ -2,14 +2,15 @@ package utils_test
 
 import (
 	"fmt"
-	"github.com/getsentry/sentry-go"
-	"github.com/getsentry/sentry-go/otel/internal/utils"
+	"strconv"
+	"testing"
+
+	"github.com/exaring/sentry-go"
+	"github.com/exaring/sentry-go/otel/internal/utils"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/codes"
 	"go.opentelemetry.io/otel/sdk/trace"
 	semconv "go.opentelemetry.io/otel/semconv/v1.12.0"
-	"strconv"
-	"testing"
 )
 
 type mockReadOnlySpan struct {
