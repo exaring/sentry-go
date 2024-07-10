@@ -13,9 +13,9 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 
-	"github.com/getsentry/sentry-go"
-	sentryfiber "github.com/getsentry/sentry-go/fiber"
-	"github.com/getsentry/sentry-go/internal/testutils"
+	"github.com/exaring/sentry-go"
+	sentryfiber "github.com/exaring/sentry-go/fiber"
+	"github.com/exaring/sentry-go/internal/testutils"
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
 )

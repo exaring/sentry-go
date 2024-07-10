@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/getsentry/sentry-go"
+	"github.com/exaring/sentry-go"
 )
 
 func prettyPrint(v interface{}) string {

@@ -1,7 +1,7 @@
 package sentry
 
 import (
-	"github.com/getsentry/sentry-go/internal/testutils"
+	"github.com/exaring/sentry-go/internal/testutils"
 )
 
 var assertEqual = testutils.AssertEqual

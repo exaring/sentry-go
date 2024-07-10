@@ -8,9 +8,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/getsentry/sentry-go"
-	"github.com/getsentry/sentry-go/internal/testutils"
-	sentryiris "github.com/getsentry/sentry-go/iris"
+	"github.com/exaring/sentry-go"
+	"github.com/exaring/sentry-go/internal/testutils"
+	sentryiris "github.com/exaring/sentry-go/iris"
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
 	"github.com/kataras/iris/v12"

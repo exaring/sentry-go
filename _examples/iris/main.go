@@ -8,8 +8,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/getsentry/sentry-go"
-	sentryiris "github.com/getsentry/sentry-go/iris"
+	"github.com/exaring/sentry-go"
+	sentryiris "github.com/exaring/sentry-go/iris"
 	"github.com/kataras/iris/v12"
 )
 

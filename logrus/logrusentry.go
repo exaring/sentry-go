@@ -8,7 +8,7 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	sentry "github.com/getsentry/sentry-go"
+	sentry "github.com/exaring/sentry-go"
 )
 
 // The identifier of the Logrus SDK.

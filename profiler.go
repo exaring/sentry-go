@@ -9,7 +9,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/getsentry/sentry-go/internal/traceparser"
+	"github.com/exaring/sentry-go/internal/traceparser"
 )
 
 // Start a profiler that collects samples continuously, with a buffer of up to 30 seconds.

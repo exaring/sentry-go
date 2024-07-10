@@ -9,9 +9,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/getsentry/sentry-go"
-	"github.com/getsentry/sentry-go/internal/otel/baggage"
-	"github.com/getsentry/sentry-go/internal/testutils"
+	"github.com/exaring/sentry-go"
+	"github.com/exaring/sentry-go/internal/otel/baggage"
+	"github.com/exaring/sentry-go/internal/testutils"
 	"github.com/google/go-cmp/cmp"
 	"go.opentelemetry.io/otel/propagation"
 	"go.opentelemetry.io/otel/trace"
