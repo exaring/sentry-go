@@ -3,7 +3,7 @@
 package utils
 
 import (
-	"github.com/getsentry/sentry-go"
+	"github.com/exaring/sentry-go"
 	"go.opentelemetry.io/otel/codes"
 	"go.opentelemetry.io/otel/sdk/trace"
 	semconv "go.opentelemetry.io/otel/semconv/v1.12.0"

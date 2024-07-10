@@ -8,8 +8,8 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"github.com/getsentry/sentry-go"
-	sentrylogrus "github.com/getsentry/sentry-go/logrus"
+	"github.com/exaring/sentry-go"
+	sentrylogrus "github.com/exaring/sentry-go/logrus"
 )
 
 func main() {

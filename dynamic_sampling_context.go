@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/getsentry/sentry-go/internal/otel/baggage"
+	"github.com/exaring/sentry-go/internal/otel/baggage"
 )
 
 const (

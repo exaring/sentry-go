@@ -45,9 +45,9 @@ func TestParseEmpty(t *testing.T) {
 
 var tracetext = []byte(`
 goroutine 7 [running]:
-github.com/getsentry/sentry-go/internal/traceparser.TestGenerateTrace.func1()
+github.com/exaring/sentry-go/internal/traceparser.TestGenerateTrace.func1()
 	c:/dev/sentry-go/internal/traceparser/parser_test.go:23 +0x6c
-created by github.com/getsentry/sentry-go/internal/traceparser.TestGenerateTrace in goroutine 6
+created by github.com/exaring/sentry-go/internal/traceparser.TestGenerateTrace in goroutine 6
 	c:/dev/sentry-go/internal/traceparser/parser_test.go:17 +0x7f
 
 goroutine 1 [chan receive]:
@@ -65,9 +65,9 @@ main.main()
 	_testmain.go:465 +0x1aa
 
 goroutine 6 [chan send]:
-github.com/getsentry/sentry-go.startProfiling.func3()
+github.com/exaring/sentry-go.startProfiling.func3()
 	c:/dev/sentry-go/profiler.go:46 +0x2b
-github.com/getsentry/sentry-go.TestStart(0x0?)
+github.com/exaring/sentry-go.TestStart(0x0?)
 	c:/dev/sentry-go/profiler_test.go:13 +0x3e
 testing.tRunner(0xc00006f860, 0x6b5f98)
 	C:/Users/name/scoop/apps/go/current/src/testing/testing.go:1576 +0x10b
@@ -77,15 +77,15 @@ created by testing.(*T).Run
 goroutine 7 [stopping the world]:
 runtime.Stack({0xc000200000, 0x100000, 0x100000}, 0x1)
 	C:/Users/name/scoop/apps/go/current/src/runtime/mprof.go:1193 +0x4d
-github.com/getsentry/sentry-go.(*profileRecorder).Collect(0xc00008a820)
+github.com/exaring/sentry-go.(*profileRecorder).Collect(0xc00008a820)
 	c:/dev/sentry-go/profiler.go:73 +0x3b
-github.com/getsentry/sentry-go.startProfiling.func2()
+github.com/exaring/sentry-go.startProfiling.func2()
 	c:/dev/sentry-go/profiler.go:38 +0xb1
-created by github.com/getsentry/sentry-go.startProfiling
+created by github.com/exaring/sentry-go.startProfiling
 	c:/dev/sentry-go/profiler.go:31 +0x36c
 
 goroutine 19 [chan send]:
-github.com/getsentry/sentry-go.startProfiling.func1()
+github.com/exaring/sentry-go.startProfiling.func1()
 	c:/dev/sentry-go/profiler.go:29 +0x25
 ...additional frames elided...
 created by time.goFunc
@@ -105,9 +105,9 @@ func TestParse(t *testing.T) {
 		i++
 	}
 
-	checkTrace(7, `github.com/getsentry/sentry-go/internal/traceparser.TestGenerateTrace.func1()
+	checkTrace(7, `github.com/exaring/sentry-go/internal/traceparser.TestGenerateTrace.func1()
 	c:/dev/sentry-go/internal/traceparser/parser_test.go:23 +0x6c
-created by github.com/getsentry/sentry-go/internal/traceparser.TestGenerateTrace in goroutine 6
+created by github.com/exaring/sentry-go/internal/traceparser.TestGenerateTrace in goroutine 6
 	c:/dev/sentry-go/internal/traceparser/parser_test.go:17 +0x7f`)
 
 	checkTrace(1, `testing.(*T).Run(0xc00006f6c0, {0x672288?, 0x180fd3?}, 0x6b5f98)
@@ -123,9 +123,9 @@ testing.(*M).Run(0xc000035ea0)
 main.main()
 	_testmain.go:465 +0x1aa`)
 
-	checkTrace(6, `github.com/getsentry/sentry-go.startProfiling.func3()
+	checkTrace(6, `github.com/exaring/sentry-go.startProfiling.func3()
 	c:/dev/sentry-go/profiler.go:46 +0x2b
-github.com/getsentry/sentry-go.TestStart(0x0?)
+github.com/exaring/sentry-go.TestStart(0x0?)
 	c:/dev/sentry-go/profiler_test.go:13 +0x3e
 testing.tRunner(0xc00006f860, 0x6b5f98)
 	C:/Users/name/scoop/apps/go/current/src/testing/testing.go:1576 +0x10b
@@ -134,14 +134,14 @@ created by testing.(*T).Run
 
 	checkTrace(7, `runtime.Stack({0xc000200000, 0x100000, 0x100000}, 0x1)
 	C:/Users/name/scoop/apps/go/current/src/runtime/mprof.go:1193 +0x4d
-github.com/getsentry/sentry-go.(*profileRecorder).Collect(0xc00008a820)
+github.com/exaring/sentry-go.(*profileRecorder).Collect(0xc00008a820)
 	c:/dev/sentry-go/profiler.go:73 +0x3b
-github.com/getsentry/sentry-go.startProfiling.func2()
+github.com/exaring/sentry-go.startProfiling.func2()
 	c:/dev/sentry-go/profiler.go:38 +0xb1
-created by github.com/getsentry/sentry-go.startProfiling
+created by github.com/exaring/sentry-go.startProfiling
 	c:/dev/sentry-go/profiler.go:31 +0x36c`)
 
-	checkTrace(19, `github.com/getsentry/sentry-go.startProfiling.func1()
+	checkTrace(19, `github.com/exaring/sentry-go.startProfiling.func1()
 	c:/dev/sentry-go/profiler.go:29 +0x25
 ...additional frames elided...
 created by time.goFunc
@@ -172,10 +172,10 @@ func TestFrames(t *testing.T) {
 
 	var expected = strings.Split(strings.TrimLeft(`
 Trace 0: goroutine 7 with at most 2 frames
-  Func = github.com/getsentry/sentry-go/internal/traceparser.TestGenerateTrace.func1
+  Func = github.com/exaring/sentry-go/internal/traceparser.TestGenerateTrace.func1
   File = c:/dev/sentry-go/internal/traceparser/parser_test.go
   Line = 23
-  Func = github.com/getsentry/sentry-go/internal/traceparser.TestGenerateTrace
+  Func = github.com/exaring/sentry-go/internal/traceparser.TestGenerateTrace
   File = c:/dev/sentry-go/internal/traceparser/parser_test.go
   Line = 17
 Trace 1: goroutine 1 with at most 6 frames
@@ -198,10 +198,10 @@ Trace 1: goroutine 1 with at most 6 frames
   File = _testmain.go
   Line = 465
 Trace 2: goroutine 6 with at most 4 frames
-  Func = github.com/getsentry/sentry-go.startProfiling.func3
+  Func = github.com/exaring/sentry-go.startProfiling.func3
   File = c:/dev/sentry-go/profiler.go
   Line = 46
-  Func = github.com/getsentry/sentry-go.TestStart
+  Func = github.com/exaring/sentry-go.TestStart
   File = c:/dev/sentry-go/profiler_test.go
   Line = 13
   Func = testing.tRunner
@@ -214,17 +214,17 @@ Trace 3: goroutine 7 with at most 4 frames
   Func = runtime.Stack
   File = C:/Users/name/scoop/apps/go/current/src/runtime/mprof.go
   Line = 1193
-  Func = github.com/getsentry/sentry-go.(*profileRecorder).Collect
+  Func = github.com/exaring/sentry-go.(*profileRecorder).Collect
   File = c:/dev/sentry-go/profiler.go
   Line = 73
-  Func = github.com/getsentry/sentry-go.startProfiling.func2
+  Func = github.com/exaring/sentry-go.startProfiling.func2
   File = c:/dev/sentry-go/profiler.go
   Line = 38
-  Func = github.com/getsentry/sentry-go.startProfiling
+  Func = github.com/exaring/sentry-go.startProfiling
   File = c:/dev/sentry-go/profiler.go
   Line = 31
 Trace 4: goroutine 19 with at most 2 frames
-  Func = github.com/getsentry/sentry-go.startProfiling.func1
+  Func = github.com/exaring/sentry-go.startProfiling.func1
   File = c:/dev/sentry-go/profiler.go
   Line = 29
   Func = time.goFunc
@@ -256,10 +256,10 @@ func TestFramesReversed(t *testing.T) {
 
 	var expected = strings.Split(strings.TrimLeft(`
 Trace 0: goroutine 7 with at most 2 frames
-  Func = github.com/getsentry/sentry-go/internal/traceparser.TestGenerateTrace
+  Func = github.com/exaring/sentry-go/internal/traceparser.TestGenerateTrace
   File = c:/dev/sentry-go/internal/traceparser/parser_test.go
   Line = 17
-  Func = github.com/getsentry/sentry-go/internal/traceparser.TestGenerateTrace.func1
+  Func = github.com/exaring/sentry-go/internal/traceparser.TestGenerateTrace.func1
   File = c:/dev/sentry-go/internal/traceparser/parser_test.go
   Line = 23
 Trace 1: goroutine 1 with at most 6 frames
@@ -288,20 +288,20 @@ Trace 2: goroutine 6 with at most 4 frames
   Func = testing.tRunner
   File = C:/Users/name/scoop/apps/go/current/src/testing/testing.go
   Line = 1576
-  Func = github.com/getsentry/sentry-go.TestStart
+  Func = github.com/exaring/sentry-go.TestStart
   File = c:/dev/sentry-go/profiler_test.go
   Line = 13
-  Func = github.com/getsentry/sentry-go.startProfiling.func3
+  Func = github.com/exaring/sentry-go.startProfiling.func3
   File = c:/dev/sentry-go/profiler.go
   Line = 46
 Trace 3: goroutine 7 with at most 4 frames
-  Func = github.com/getsentry/sentry-go.startProfiling
+  Func = github.com/exaring/sentry-go.startProfiling
   File = c:/dev/sentry-go/profiler.go
   Line = 31
-  Func = github.com/getsentry/sentry-go.startProfiling.func2
+  Func = github.com/exaring/sentry-go.startProfiling.func2
   File = c:/dev/sentry-go/profiler.go
   Line = 38
-  Func = github.com/getsentry/sentry-go.(*profileRecorder).Collect
+  Func = github.com/exaring/sentry-go.(*profileRecorder).Collect
   File = c:/dev/sentry-go/profiler.go
   Line = 73
   Func = runtime.Stack
@@ -311,7 +311,7 @@ Trace 4: goroutine 19 with at most 2 frames
   Func = time.goFunc
   File = C:/Users/name/scoop/apps/go/current/src/time/sleep.go
   Line = 176
-  Func = github.com/getsentry/sentry-go.startProfiling.func1
+  Func = github.com/exaring/sentry-go.startProfiling.func1
   File = c:/dev/sentry-go/profiler.go
   Line = 29
 `, "\n"), "\n")

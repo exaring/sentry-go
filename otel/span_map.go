@@ -5,7 +5,7 @@ package sentryotel
 import (
 	"sync"
 
-	"github.com/getsentry/sentry-go"
+	"github.com/exaring/sentry-go"
 	otelTrace "go.opentelemetry.io/otel/trace"
 )
 

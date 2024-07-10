@@ -9,9 +9,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/getsentry/sentry-go"
-	sentryhttp "github.com/getsentry/sentry-go/http"
-	"github.com/getsentry/sentry-go/internal/testutils"
+	"github.com/exaring/sentry-go"
+	sentryhttp "github.com/exaring/sentry-go/http"
+	"github.com/exaring/sentry-go/internal/testutils"
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
 	"github.com/stretchr/testify/assert"

@@ -15,7 +15,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/getsentry/sentry-go/internal/testutils"
+	"github.com/exaring/sentry-go/internal/testutils"
 	"github.com/google/go-cmp/cmp"
 )
 

@@ -36,23 +36,23 @@ func TestSplitQualifiedFunctionName(t *testing.T) {
 		{"runtime.Callers", "runtime", "Callers"},
 		{"main.main.func1", "main", "main.func1"},
 		{
-			"github.com/getsentry/sentry-go.Init",
-			"github.com/getsentry/sentry-go",
+			"github.com/exaring/sentry-go.Init",
+			"github.com/exaring/sentry-go",
 			"Init",
 		},
 		{
-			"github.com/getsentry/sentry-go.(*Hub).Flush",
-			"github.com/getsentry/sentry-go",
+			"github.com/exaring/sentry-go.(*Hub).Flush",
+			"github.com/exaring/sentry-go",
 			"(*Hub).Flush",
 		},
 		{
-			"github.com/getsentry/sentry-go.Test.func2.1.1",
-			"github.com/getsentry/sentry-go",
+			"github.com/exaring/sentry-go.Test.func2.1.1",
+			"github.com/exaring/sentry-go",
 			"Test.func2.1.1",
 		},
 		{
-			"github.com/getsentry/confusing%2epkg%2ewith%2edots.Test.func1",
-			"github.com/getsentry/confusing%2epkg%2ewith%2edots",
+			"github.com/exaring/confusing%2epkg%2ewith%2edots.Test.func1",
+			"github.com/exaring/confusing%2epkg%2ewith%2edots",
 			"Test.func1",
 		},
 	}
@@ -90,22 +90,22 @@ func TestCreateFrames(t *testing.T) {
 					File:     "/goroot/src/testing/testing.go",
 				},
 				{
-					Function: "github.com/getsentry/sentry-go_test.TestNewStacktrace.func1",
+					Function: "github.com/exaring/sentry-go_test.TestNewStacktrace.func1",
 					File:     "/somewhere/sentry/sentry-go/stacktrace_external_test.go",
 				},
 				{
-					Function: "github.com/getsentry/sentry-go.StacktraceTestHelper.NewStacktrace",
+					Function: "github.com/exaring/sentry-go.StacktraceTestHelper.NewStacktrace",
 					File:     "/somewhere/sentry/sentry-go/stacktrace_test.go",
 				},
 				{
-					Function: "github.com/getsentry/sentry-go.NewStacktrace",
+					Function: "github.com/exaring/sentry-go.NewStacktrace",
 					File:     "/somewhere/sentry/sentry-go/stacktrace.go",
 				},
 			},
 			out: []Frame{
 				{
 					Function: "TestNewStacktrace.func1",
-					Module:   "github.com/getsentry/sentry-go_test",
+					Module:   "github.com/exaring/sentry-go_test",
 					AbsPath:  "/somewhere/sentry/sentry-go/stacktrace_external_test.go",
 					InApp:    true,
 				},
@@ -115,11 +115,11 @@ func TestCreateFrames(t *testing.T) {
 		{
 			in: []runtime.Frame{
 				{
-					Function: "github.com/getsentry/sentry-go/http/integration.Example.Integration",
+					Function: "github.com/exaring/sentry-go/http/integration.Example.Integration",
 					File:     "/somewhere/sentry/sentry-go/http/integration/integration.go",
 				},
 				{
-					Function: "github.com/getsentry/sentry-go/http.(*Handler).Handle",
+					Function: "github.com/exaring/sentry-go/http.(*Handler).Handle",
 					File:     "/somewhere/sentry/sentry-go/http/sentryhttp.go",
 				},
 				{

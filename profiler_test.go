@@ -13,7 +13,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/getsentry/sentry-go/internal/testutils"
+	"github.com/exaring/sentry-go/internal/testutils"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -207,7 +207,7 @@ func TestProfilerStackTrace(t *testing.T) {
 	// Note: we can't check the exact stack trace because the profiler runs its own goroutine
 	// And this test goroutine may be interrupted at multiple points.
 	require.True(strings.HasSuffix(actual, `
-github.com/getsentry/sentry-go TestProfilerStackTrace
+github.com/exaring/sentry-go TestProfilerStackTrace
 testing tRunner
 testing (*T).Run`))
 }

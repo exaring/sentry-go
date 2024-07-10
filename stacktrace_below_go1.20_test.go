@@ -18,7 +18,7 @@ func TestFilterCompilerGeneratedSymbols(t *testing.T) {
 		{"type..eq.runtime._panic", ""},
 		{"type..hash.struct { runtime.gList; runtime.n int32 }", ""},
 		{"go.(*struct { sync.Mutex; math/big.table [64]math/big", ""},
-		{"github.com/getsentry/sentry-go.Test.func2.1.1", "github.com/getsentry/sentry-go"},
+		{"github.com/exaring/sentry-go.Test.func2.1.1", "github.com/exaring/sentry-go"},
 	}
 
 	for _, tt := range tests {

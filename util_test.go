@@ -54,7 +54,7 @@ func TestRevisionFromBuildInfo(t *testing.T) {
 		},
 		Deps: []*debug.Module{
 			{
-				Path:    "github.com/getsentry/sentry-go",
+				Path:    "github.com/exaring/sentry-go",
 				Version: "v0.23.1",
 				Replace: &debug.Module{
 					Path: "pkg/sentry",
@@ -80,7 +80,7 @@ func TestRevisionFromBuildInfoNoVcsInformation(t *testing.T) {
 		},
 		Deps: []*debug.Module{
 			{
-				Path:    "github.com/getsentry/sentry-go",
+				Path:    "github.com/exaring/sentry-go",
 				Version: "v0.23.1",
 				Replace: &debug.Module{
 					Path: "pkg/sentry",

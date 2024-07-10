@@ -9,9 +9,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/getsentry/sentry-go"
-	"github.com/getsentry/sentry-go/internal/testutils"
-	sentrynegroni "github.com/getsentry/sentry-go/negroni"
+	"github.com/exaring/sentry-go"
+	"github.com/exaring/sentry-go/internal/testutils"
+	sentrynegroni "github.com/exaring/sentry-go/negroni"
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
 	"github.com/urfave/negroni"

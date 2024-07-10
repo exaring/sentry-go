@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/getsentry/sentry-go"
+	"github.com/exaring/sentry-go"
 )
 
 func TestLinkTraceContextToErrorEventSetsContext(t *testing.T) {

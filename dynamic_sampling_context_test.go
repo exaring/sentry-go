@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/getsentry/sentry-go/internal/testutils"
+	"github.com/exaring/sentry-go/internal/testutils"
 )
 
 func TestDynamicSamplingContextFromHeader(t *testing.T) {
